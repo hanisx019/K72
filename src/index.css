@@ -1,18 +1,25 @@
 @import "tailwindcss";
-*{
-    color: white;
-}
+
 
 @font-face {
     font-family: 'font1';
-    src: url(../public/fonts/Lausanne-300.woff2);
+    src: url(/fonts/Lausanne-300.woff2);
 }
 @font-face {
     font-family: 'font2';
-    src: url(../public/fonts/Lausanne-500.woff2);
+    src: url(/fonts/Lausanne-500.woff2);
 }
 
 .lh{
     line-height: 130px;
     font-size: 9.5vw;
+    letter-spacing: -2px;
+    line-height: 125px;
+    word-spacing: 5px;
+}
+.lh1{
+    font-size: 6.5vw;
+}
+.lh2{
+    line-height: 35vh;
 }

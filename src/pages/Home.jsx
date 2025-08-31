@@ -5,11 +5,11 @@ import Footer from "../components/home/Footer";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-y-scroll scrollbar-y-hide text-white">
       <div className="h-screen w-screen fixed">
         <Video />
       </div>
-      <div className="h-screen w-screen relative flex flex-col">
+      <div className="h-screen w-screen relative flex flex-col justify-between ">
         <Header />
         <Footer />
       </div>

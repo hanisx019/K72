@@ -4,7 +4,7 @@ import videoSrc from '../../assets/Video.mp4';
 const Video = () => {
   return (
     <div>
-      <video className='h-screen w-screen object-cover' autoPlay loop muted src={videoSrc}></video>
+      <video className='h-full w-full object-cover' autoPlay loop muted src={videoSrc}></video>
     </div>
   )
 }
