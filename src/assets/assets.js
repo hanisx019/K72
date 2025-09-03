@@ -13,6 +13,9 @@ import img11 from "./11.jpg";
 import img12 from "./12.jpg";
 import img13 from "./13.jpg";
 import img14 from "./14.jpg";
+import menuimg1 from "./menuimg.jpg";
+import menuimg2 from "./menuimg2.jpg";
+
 
 export default Video;
 export {
@@ -30,4 +33,7 @@ export {
   img12,
   img13,
   img14,
+  menuimg1,
+  menuimg2,
 };
+

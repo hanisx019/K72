@@ -18,8 +18,54 @@
     word-spacing: 5px;
 }
 .lh1{
-    font-size: 6.5vw;
+    font-size: 6vw;
 }
 .lh2{
     line-height: 35vh;
+}
+body{
+    overflow-x: hidden;
+}
+
+.Link2{
+    opacity: 0;
+}
+.Link1:hover .Link2{
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.moveX{
+    animation-name:moveAnimation ;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transition: transform 0.1s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 2s cubic-bezier(0.22, 1, 0.36, 1);
+    cursor: pointer;
+}
+.moveX:hover {
+    transform: scale(1.12) translateY(-18px);
+    box-shadow: 0 24px 64px 0 rgba(0,0,0,0.22);
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translate(-100%);
+    }
+}
+
+.bar2{
+    background-color: white;
+}
+.bar1:hover .bar2{
+    background-color: #D3FD50;
+    transition: all;
+}
+
+::selection {
+  background: #D3FD50;   /* background color when selected */
+  color: black;        /* text color when selected */
 }

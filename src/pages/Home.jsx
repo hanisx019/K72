@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react"; 
 import Video from "../components/home/Video";
 import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); // move to top when this page loads
+  }, []);
+
   return (
-    <div className="overflow-y-scroll scrollbar-y-hide text-white">
+    <div className="text-white">
       <div className="h-screen w-screen fixed">
         <Video />
       </div>
