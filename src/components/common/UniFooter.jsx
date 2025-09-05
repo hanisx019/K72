@@ -34,7 +34,7 @@ const UniFooter = () => {
                     <div className='transition-all  hover:text-[#D3FD50]'>Options de Consentement</div>
                 </div>
             </div>
-            <div className='font-[font2] text-xl cursor-pointer uppercase transition-all  hover:text-[#D3FD50] '>RETOUR EN HAUT&nbsp;&nbsp;</div>
+            <div className='font-[font2] text-xl cursor-pointer uppercase transition-all  hover:text-[#D3FD50] ' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>RETOUR EN HAUT&nbsp;&nbsp;</div>
         </div>
     </div>
   )

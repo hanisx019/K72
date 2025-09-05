@@ -94,7 +94,7 @@ const Agence = () => {
             </p>
           </div>
         </div>
-        <div className="text-white absolute w-[99.9vw] mt-[200px] ">
+        <div className="text-white absolute w-[99vw] mt-[200px] ">
           <UniFooter />
         </div>
       </div>
