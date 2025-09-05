@@ -1,4 +1,4 @@
-import Video from "./video.mp4";
+import Video from "./Video.mp4";
 import img1 from "./1.jpg";
 import img2 from "./2.jpg";
 import img3 from "./3.jpg";
