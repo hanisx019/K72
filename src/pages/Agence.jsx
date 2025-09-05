@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Navbar from "../components/navigation/Navbar";
 import { useLocation } from "react-router-dom";
+import UniFooter from "../components/common/UniFooter";
 
 
 // Dynamically import all jpg images from assets folder and get their URLs
@@ -74,13 +75,13 @@ const Agence = () => {
   return (
     <>
   <Navbar />
-  <div className="h-screen w-screen bg-white text-black font-[font2] ">
-        <div className="section1 py-1">
+  <div className="h-screen w-screen bg-white text-black font-[font2] relative">
+        <div className="section1 py-1 ">
           <div ref={ImageDivRef} className="absolute w-[230px] rounded-[20px] overflow-hidden top-[150px] left-[32%]">
             <img ref={imageRef} src={imageArray[0]} />
           </div>
           <div className="relative mt-[55vh] text-[40vh] uppercase text-center lh2">
-            <h1>Sixty-<br />seventh<br />Twelve</h1>
+            <h1>Soixan7e<br />Douze<br />Twelve</h1>
           </div>
           <div className="text-6xl ml-[40%]  mt-[15px] relative w-[60%]">
             <p className="pr-[10px] ">
@@ -93,7 +94,8 @@ const Agence = () => {
             </p>
           </div>
         </div>
-        <div className="section2 h-screen">
+        <div className="text-white absolute w-[99.9vw] mt-[200px] ">
+          <UniFooter />
         </div>
       </div>
     </>

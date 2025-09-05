@@ -1,3 +1,20 @@
+/* Custom scrollbar color for the whole application */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background: #D3FD50;
+    border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #222;
+}
+
+/* For Firefox */
+html {
+    scrollbar-color: #D3FD50 #222;
+    scrollbar-width: thin;
+}
 @import "tailwindcss";
 
 
