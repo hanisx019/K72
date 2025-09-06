@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Video from "../components/home/Video";
 import Header from "../components/home/Header";
 import Footer from "../components/home/Footer";
+    import { women } from '../assets/assets.js';
 
 const Home = () => {
 

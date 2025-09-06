@@ -86,3 +86,12 @@ body{
   background: #D3FD50;   /* background color when selected */
   color: black;        /* text color when selected */
 }
+
+
+/* Prevent white flash on initial load */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: transparent; /* 👈 no white background */
+}

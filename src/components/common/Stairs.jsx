@@ -1,73 +1,95 @@
-
-import React, { useContext } from "react"; 
-import { useRef } from "react";
-import { useLocation } from "react-router-dom"; // required for Page Location
-import { useGSAP } from "@gsap/react"; // required for gsap
-import gsap from "gsap"; // required for gsap
+import React, { useContext, useRef } from "react";
+import { useLocation } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 import { NavBarContext } from "../../context/NavContext";
 
-// The props contains the App 
 const Stairs = (props) => {
-  const currentPath = useLocation().pathname; // Here Location is used for Displaying Stairs Animation on Each page Renders
+  const currentPath = useLocation().pathname;
   const [navOpen] = useContext(NavBarContext);
-  const stairParentRef = useRef(null); // Reference Hook For Complete Stairs Animation Page
-  const pageRef = useRef(null); // Reference Hook For Conmplete App
+  const stairParentRef = useRef(null);
+  const pageRef = useRef(null);
 
-  // Stairs Animation 
-  useGSAP(function () {
+  useGSAP(
+    function () {
       const tl = gsap.timeline();
-      // Making Stair Window Visible 
-      tl.to(stairParentRef.current, {
+
+      // Make stairs container visible
+      tl.set(stairParentRef.current, {
         display: "block",
-        pointerEvents: "auto"
+        pointerEvents: "auto",
+        backgroundColor: "black/5",
       });
-      // Initial State
+
+      // Initial stairs drop-in
       tl.from(".stair", {
         height: 0,
-        stagger: {
-          amount: -0.25,
-        },
+        stagger: { amount: -0.25 },
       });
-      // Final State
+
+      // Move stairs down
       tl.to(".stair", {
         y: "100%",
-        stagger: {
-          amount: -0.25,
-        },
+        stagger: { amount: -0.25 },
       });
-      // Making Stair Window Invisible and non-interactive
-      tl.to(stairParentRef.current, {
+
+      // Hide stairs
+      tl.set(stairParentRef.current, {
         display: "none",
-        pointerEvents: "none"
+        pointerEvents: "none",
       });
-      tl.to(".stair", {
-        y: "0%",
+
+      // Reset stairs for next use
+      tl.set(".stair", { y: "0%" });
+
+      // Finally, reveal the page **after stairs are done**
+      tl.from(pageRef.current, {
+        opacity: 0,
+        scale: 1.05,
+        duration: 0.7,
+        ease: "power3.out"
       });
-      // This GSAP Animation is Written For Loading  the Stairs Animation Before App Loads
-      gsap.from(pageRef.current,{
-          opacity:0,
-          delay:1.3,
-          scale:1.2
-        })
-    },[currentPath, navOpen]); // Animation triggers on route change or menu open
+      tl.to(pageRef.current, {
+        scale: 1,
+        duration: 0.5,
+        ease: "power3.inOut"
+      });
+    },
+    [currentPath, navOpen]
+  );
 
   return (
-    <div>
-      {/* Div Contains The Stairs Component*/}
-      <div ref={stairParentRef} className="w-full h-full fixed flex z-10 top-0">
+    <>
+      {/* Stairs Overlay */}
+      <div
+        ref={stairParentRef}
+        className="w-full h-full fixed flex z-10 top-0 bg-black/5"
+      >
         <div className="h-full w-screen flex">
-          <div className="stair  bg-black w-1/5"></div>
+          <div className="stair bg-black w-1/5"></div>
           <div className="stair bg-black w-1/5"></div>
           <div className="stair bg-black w-1/5"></div>
           <div className="stair bg-black w-1/5"></div>
           <div className="stair bg-black w-1/5"></div>
         </div>
       </div>
-      {/*This Div Contains the App */}
-      <div ref={pageRef} className="h-screen">
-        {props.children}
-      </div> 
-    </div>
+
+      {/* App Content, excluding MenuBar */}
+      {React.Children.map(props.children, child => {
+        if (child && child.type && child.type.name === 'MenuBar') {
+          // Render MenuBar outside stairs transition
+          return null;
+        }
+        return <div ref={pageRef} className="h-screen">{child}</div>;
+      })}
+      {/* Render MenuBar separately so it's not affected by stairs */}
+      {React.Children.map(props.children, child => {
+        if (child && child.type && child.type.name === 'MenuBar') {
+          return child;
+        }
+        return null;
+      })}
+    </>
   );
 };
 

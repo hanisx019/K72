@@ -14,7 +14,7 @@ const UniFooter = () => {
   return (
     <div className='bg-black w-full h-[60vh] mt-[-20px] pt-4'>
         <div className='ml-4 flex justify-between '>
-            <div className='flex gap-3'>
+            <div className='flex gap-3 cursor-pointer'>
                 <div className='text-7xl font-[font2]  outline-2 rounded-[100px] px-6 rouned-[10px] pt-1 transition-all  hover:text-[#D3FD50]'>FB</div>
                 <div className='text-7xl font-[font2]  outline-2 rounded-[100px] px-6 rouned-[10px] pt-1 transition-all  hover:text-[#D3FD50]'>IG</div>
                 <div className='text-7xl font-[font2]  outline-2 rounded-[100px] px-6 rouned-[10px] pt-1 transition-all  hover:text-[#D3FD50]'>IN</div>

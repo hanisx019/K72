@@ -7,7 +7,6 @@ import { vd } from '../../assets/assets';
 import { sh1 } from '../../assets/assets';
 import { sh2 } from '../../assets/assets';
 import { Link } from 'react-router-dom';
-
 import { useGSAP } from "@gsap/react";
 import { gsap } from 'gsap'; 
 import { NavBarContext } from '../../context/NavContext';
@@ -69,14 +68,14 @@ const MenuBar = (props) => {
   });
 
   // Slide all stairs downward out of view
-  tl.from('.stairing', {
+  tl.from('.stairing', { ////////////////////////
     y: '100%', 
     height: 100,
     duration: 0.6,
     ease: "power3.in",
   }, "-=0.2"); // overlap a bit for smoothness
 
-  tl.from(".stairing", {
+  tl.from(".stairing", { //////////////////////////
     y: '0',
     delay:0.5,
     height: 0,
@@ -156,9 +155,9 @@ const MenuBar = (props) => {
           <div className="Link2 h-[120px] pt-2 items-center border-[0.1px] border-[#D3FD50] border-r-0 border-l-0 whitespace-nowrap w-full absolute top-0 bg-[#D3FD50] text-black ">
           <Link to='/Projects' onClick={() => setNavOpen(false)}>
             <div className="moveX flex items-center gap-8 flex-shrink-0">
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg1} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg1} alt="Project menu image 1" /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT VOIR</div>
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg2} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg2} alt="Project menu image 2" /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT VOIR</div>
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg1} /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT VOIR</div>
@@ -183,9 +182,9 @@ const MenuBar = (props) => {
           <div className="Link2 h-[120px] pt-2 items-center border-[0.1px] border-[#D3FD50] border-r-0 border-l-0 whitespace-nowrap w-full absolute top-0 bg-[#D3FD50] text-black ">
           <Link to='/Agence' onClick={() => setNavOpen(false)}>
             <div className="moveX flex items-center gap-8 flex-shrink-0">
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={sh2} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={sh2} alt="Agence menu image 2" /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT SAVIOR</div>
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={sh1} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={sh1} alt="Agence menu image 1" /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT SAVIOR</div>
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={sh2} /></div>
               <div className="flex-shrink-0 text-[120px]">POUR TOUT SAVIOR</div>
@@ -233,9 +232,9 @@ const MenuBar = (props) => {
           <div className='Link1 origin-top flex h-[120px] text-[120px] pt-2 items-center justify-center border-[0.1px] border-gray-400 border-r-0 border-l-0 '>BLOGUE</div>
           <div className="Link2 h-[120px] pt-2 items-center border-[0.1px] border-[#D3FD50] border-r-0 border-l-0 whitespace-nowrap w-full absolute top-0 bg-[#D3FD50] text-black ">
             <div className="moveX flex items-center gap-8 flex-shrink-0">
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={hand} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={hand} alt="Blog menu hand image" /></div>
               <div className="flex-shrink-0 text-[120px]">LIRE LES ARTICLES</div>
-              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={vd} /></div>
+              <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={vd} alt="Blog menu video image" /></div>
               <div className="flex-shrink-0 text-[120px]">LIRE LES ARTICLES</div>
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={hand} /></div>
               <div className="flex-shrink-0 text-[120px]">LIRE LES ARTICLES</div>

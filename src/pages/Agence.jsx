@@ -78,7 +78,7 @@ const Agence = () => {
   <div className="h-screen w-screen bg-white text-black font-[font2] relative">
         <div className="section1 py-1 ">
           <div ref={ImageDivRef} className="absolute w-[230px] rounded-[20px] overflow-hidden top-[150px] left-[32%]">
-            <img ref={imageRef} src={imageArray[0]} />
+            <img ref={imageRef} src={imageArray[0]} loading="lazy" alt="Agence gallery image" />
           </div>
           <div className="relative mt-[55vh] text-[40vh] uppercase text-center lh2">
             <h1>Soixan7e<br />Douze<br />Twelve</h1>
