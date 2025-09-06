@@ -1,9 +1,10 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Agence from "./pages/Agence";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import Navbar from "./components/navigation/Navbar";
 import MenuBar from "./components/navigation/MenuBar";
 import { useContext, useState, useEffect, useCallback } from "react";
@@ -33,6 +34,12 @@ const App = () => {
       case '/Agence':
         document.title = 'Agence — K72';
         break;
+      case '/Contact':
+        document.title = 'Contact — K72';
+        break;
+      case '/Blog':
+        document.title = 'Blog — K72';
+        break;
       default:
         document.title = 'K72';
     }
@@ -61,6 +68,8 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Projects" element={<Projects />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Blog" element={<Blog />} />
         <Route path="/Agence" element={<Agence key={agenceKey} />} />
       </Routes>
     </div>

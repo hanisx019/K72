@@ -1,12 +1,22 @@
-import React from 'react'
+
+import React, { forwardRef } from 'react';
 import videoSrc from '../../assets/Video.mp4';
 
-const Video = () => {
+// Accept ref and onReady callback
+const Video = forwardRef(({ onReady, className = '' }, ref) => {
   return (
-    <div className='h-full'>
-      <video className='h-full w-screen object-cover' autoPlay loop muted src={videoSrc}></video>
+    <div className={'h-full ' + className}>
+      <video
+        ref={ref}
+        className='h-full w-screen object-cover'
+        loop
+        muted
+        src={videoSrc}
+        onCanPlayThrough={onReady}
+        playsInline
+      />
     </div>
-  )
-}
+  );
+});
 
-export default Video
+export default Video;

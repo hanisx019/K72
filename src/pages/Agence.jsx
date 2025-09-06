@@ -8,16 +8,12 @@ import { useLocation } from "react-router-dom";
 import UniFooter from "../components/common/UniFooter";
 
 
-// Dynamically import all jpg images from assets folder and get their URLs
-const allImages = import.meta.glob("../assets/*.jpg", { eager: true });
-//
+
+// Use images from public/assets for robust production loading
 const allowedNames = [
   "1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","9.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg",
 ];
-//
-const imageArray = allowedNames
-  .map((name) => allImages[`../assets/${name}`]?.default)
-  .filter(Boolean);
+const imageArray = allowedNames.map((name) => `/assets/${name}`);
 
 const Agence = () => {
   const ImageDivRef = useRef(null);

@@ -1,19 +1,18 @@
 import React from "react";
 import Video from "./Video";
 
-const Header = () => {
+const Header = ({ videoRef, onVideoReady }) => {
   return (
-  <div className=" relative">
+    <div className=" relative">
       <div className="uppercase font-[font1] flex flex-col justify-center items-center text-center lh mt-10">
         <div >L'étincelle</div>
         <div className="flex flex-row justify-center">
           qui
           <div className=" w-[15%] h-[120px] rounded-[100px] overflow-hidden">
-            <Video />
+            <Video ref={videoRef} onReady={onVideoReady} className="!h-[120px] !w-full object-cover" />
           </div>
         <div>génère</div>
         </div>
-        
         <div>la créativité</div>
       </div>
       <div className=" w-1/5 absolute right-0 font-[font1] text-[14px] mt-4 mr-2">   

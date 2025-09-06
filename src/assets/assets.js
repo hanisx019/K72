@@ -37,6 +37,7 @@ import sh1 from "./short1.jpg"
 import sh2 from "./short2.jpg"
 import hrt from "./hrt.png"
 import women from "./women.jpg"
+import hand2 from "./hand2.png"
 
 export default Video;
 export {
@@ -77,7 +78,8 @@ export {
   sh1,
   sh2,
   hrt,
-  women
+  women,
+  hand2
 
 };
 

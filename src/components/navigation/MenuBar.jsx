@@ -207,6 +207,7 @@ const MenuBar = (props) => {
         <div className="Link1 relative">
           <div className='Link1 origin-top flex h-[120px] text-[120px] pt-2 items-center justify-center border-[0.1px] border-gray-400 border-r-0 border-l-0 '>CONTACT</div>
           <div className="Link2 h-[120px] pt-2 items-center border-[0.1px] border-[#D3FD50] border-r-0 border-l-0 whitespace-nowrap w-full absolute top-0 bg-[#D3FD50] text-black ">
+            <Link to='/Contact' onClick={() => setNavOpen(false)}>
             <div className="moveX flex items-center gap-8 flex-shrink-0">
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg1} /></div>
               <div className="flex-shrink-0 text-[120px]">POUR ENVOYER UN FAX</div>
@@ -225,12 +226,14 @@ const MenuBar = (props) => {
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg2} /></div>
               <div className="flex-shrink-0 text-[120px]">POUR ENVOYER UN FAX</div>
             </div>
+            </Link>
           </div>
         </div>
 
         <div className="Link1 relative">
           <div className='Link1 origin-top flex h-[120px] text-[120px] pt-2 items-center justify-center border-[0.1px] border-gray-400 border-r-0 border-l-0 '>BLOGUE</div>
           <div className="Link2 h-[120px] pt-2 items-center border-[0.1px] border-[#D3FD50] border-r-0 border-l-0 whitespace-nowrap w-full absolute top-0 bg-[#D3FD50] text-black ">
+            <Link to='/Blog' onClick={() => setNavOpen(false)}>
             <div className="moveX flex items-center gap-8 flex-shrink-0">
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={hand} alt="Blog menu hand image" /></div>
               <div className="flex-shrink-0 text-[120px]">LIRE LES ARTICLES</div>
@@ -249,6 +252,7 @@ const MenuBar = (props) => {
               <div className="flex-shrink-0 w-[140px] pb-2"><img className='rounded-[50px]' src={menuimg2} /></div>
               <div className="flex-shrink-0 text-[120px]">LIRE LES ARTICLES</div>
             </div>
+            </Link>
           </div>
         </div>
 
