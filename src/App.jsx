@@ -19,7 +19,6 @@ const App = () => {
     if (isFirstLoad && isDirectVisit) {
       window.sessionStorage.setItem('firstLoadDone', 'true');
       window.location.reload();
-      console.log('Page reloaded on first direct visit');
     }
   }, []);
   const location = useLocation();
@@ -28,16 +27,16 @@ const App = () => {
       case '/':
         document.title = 'Home — K72';
         break;
-      case '/Projects':
+  case '/projects':
         document.title = 'Projects — K72';
         break;
-      case '/Agence':
+  case '/agence':
         document.title = 'Agence — K72';
         break;
-      case '/Contact':
+  case '/contact':
         document.title = 'Contact — K72';
         break;
-      case '/Blog':
+  case '/blog':
         document.title = 'Blog — K72';
         break;
       default:
@@ -49,14 +48,14 @@ const App = () => {
 
   // Reload Agence page on navigation
   useEffect(() => {
-    if (location.pathname === '/Agence') {
+  if (location.pathname === '/agence') {
       setAgenceKey(prev => prev + 1);
     }
   }, [location.pathname]);
 
   // Callback to reload Agence when MenuBar closes on Agence page
   const handleMenuBarClose = useCallback(() => {
-    if (location.pathname === '/Agence') {
+  if (location.pathname === '/agence') {
       setAgenceKey(prev => prev + 1);
     }
   }, [location.pathname]);
@@ -67,10 +66,10 @@ const App = () => {
       {navOpen && <MenuBar onClose={handleMenuBarClose} setNavOpen={setNavOpen} />}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Projects" element={<Projects />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Blog" element={<Blog />} />
-        <Route path="/Agence" element={<Agence key={agenceKey} />} />
+  <Route path="/projects" element={<Projects />} />
+  <Route path="/contact" element={<Contact />} />
+  <Route path="/blog" element={<Blog />} />
+  <Route path="/agence" element={<Agence key={agenceKey} />} />
       </Routes>
     </div>
   );

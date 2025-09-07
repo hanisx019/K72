@@ -26,13 +26,13 @@ const Agence = () => {
     if (imageRef.current && imageArray[0]) {
       imageRef.current.src = imageArray[0];
     }
-    // Restore scroll bar only if current route is /Agence
-    if (location.pathname === '/Agence') {
+  // Restore scroll bar only if current route is /agence
+  if (location.pathname === '/agence') {
       document.body.style.overflowY = 'auto';
     }
     // When leaving Agence, hide scroll bar for other pages
     return () => {
-      if (location.pathname !== '/Agence') {
+  if (location.pathname !== '/agence') {
         document.body.style.overflow = 'hidden';
         document.body.style.overflowY = 'hidden';
       }
@@ -70,8 +70,12 @@ const Agence = () => {
 
   return (
     <>
-  <Navbar />
-  <div className="h-screen w-screen bg-white text-black font-[font2] relative">
+      {/* Preload all Agence images for fast scroll display */}
+      {imageArray.map((src, i) => (
+        <link key={src} rel="preload" as="image" href={src} />
+      ))}
+      <Navbar />
+      <div className="h-screen w-screen bg-white text-black font-[font2] relative">
         <div className="section1 py-1 ">
           <div ref={ImageDivRef} className="absolute w-[230px] rounded-[20px] overflow-hidden top-[150px] left-[32%]">
             <img ref={imageRef} src={imageArray[0]} loading="lazy" alt="Agence gallery image" />
@@ -90,7 +94,7 @@ const Agence = () => {
             </p>
           </div>
         </div>
-        <div className="text-white absolute w-[99vw] mt-[200px] ">
+        <div className="text-white absolute w-[100vw] mt-[200px] ">
           <UniFooter />
         </div>
       </div>

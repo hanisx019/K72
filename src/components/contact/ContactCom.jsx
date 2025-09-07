@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactCom = () => {
   return (
-    <div className='h-screen w-screen bg-black relative py-[70px]'>
+    <div className='h-screen w-screen bg-black relative py-[95px]'>
       <div className=" font-[font1] text-[140px] leading-28 uppercase text-center">
           <div className=''><p>Pour<br /> parler de <br />votre<br /> projet</p></div>
       </div>

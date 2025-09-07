@@ -1,20 +1,3 @@
-/* Custom scrollbar color for the whole application
-::-webkit-scrollbar {
-    width: 12px;
-}
-::-webkit-scrollbar-thumb {
-    background: #D3FD50;
-    border-radius: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #222;
-}
-
-/* For Firefox */
-/* html {
-    scrollbar-color: #D3FD50 #222;
-    scrollbar-width: thin;
-} */ 
 @import "tailwindcss";
 
 
@@ -99,4 +82,13 @@ html, body, #root {
   overflow-y: scroll;
   overflow-x: hidden;
   height: 100vh;
+}
+html, body, #root {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
 }
