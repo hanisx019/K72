@@ -11,6 +11,7 @@ import { useContext, useState, useEffect, useCallback } from "react";
 import { NavBarContext } from "./context/NavContext";
 import { useLocation } from "react-router-dom";
 
+// MARKER: If any problems occur, redirect or debug from this point in App.jsx
 const App = () => {
   // Robust: Reload only on first direct visit (not after reload or navigation)
   useEffect(() => {

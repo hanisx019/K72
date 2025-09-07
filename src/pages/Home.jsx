@@ -43,7 +43,7 @@ const Home = () => {
 
   return (
     <div className="text-white">
-      <div className="fixed bottom-[12px] left-4 z-[1001]  text-white px-4 py-2 rounded-lg font-[font2]">
+      <div className="fixed bottom-[12px] left-4 z-[1001]  text-white px-4 py-2 rounded-lg font-[font2] time ">
         MONTREAL_ {currentTime}
       </div>
       <div className="h-screen w-screen fixed">

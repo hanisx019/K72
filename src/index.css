@@ -1,78 +1,81 @@
 @import "tailwindcss";
 
+/* MARKER2: CSS cleanup and mobile video fix save point */
 
 @font-face {
-    font-family: 'font1';
-    src: url(/fonts/Lausanne-300.woff2);
+  font-family: "font1";
+  src: url(/fonts/Lausanne-300.woff2);
 }
 @font-face {
-    font-family: 'font2';
-    src: url(/fonts/Lausanne-500.woff2);
+  font-family: "font2";
+  src: url(/fonts/Lausanne-500.woff2);
 }
 
-.lh{
-    line-height: 130px;
-    font-size: 9.5vw;
-    letter-spacing: -2px;
-    line-height: 125px;
-    word-spacing: 5px;
+.lh {
+  line-height: 130px;
+  font-size: 9.5vw;
+  letter-spacing: -2px;
+  line-height: 125px;
+  word-spacing: 5px;
 }
-.lh1{
-    font-size: 6vw;
+.lh1 {
+  font-size: 6vw;
 }
-.lh2{
-    line-height: 35vh;
+.lh2 {
+  line-height: 35vh;
 }
-body{
-    overflow-x: hidden;
-}
-
-.Link2{
-    opacity: 0;
-}
-.Link1:hover .Link2{
-    transition: all 0.3s ease-in-out;
-    opacity: 1;
+body {
+  overflow-x: hidden;
 }
 
-.moveX{
-    animation-name:moveAnimation ;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transition: transform 0.1s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 2s cubic-bezier(0.22, 1, 0.36, 1);
-    cursor: pointer;
+.Link2 {
+  opacity: 0;
+}
+.Link1:hover .Link2 {
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+.moveX {
+  animation-name: moveAnimation;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transition: transform 0.1s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 2s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
 }
 .moveX:hover {
-    transform: scale(1.12) translateY(-18px);
-    box-shadow: 0 24px 64px 0 rgba(0,0,0,0.22);
+  transform: scale(1.12) translateY(-18px);
+  box-shadow: 0 24px 64px 0 rgba(0, 0, 0, 0.22);
 }
 
 @keyframes moveAnimation {
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translate(-100%);
-    }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translate(-100%);
+  }
 }
 
-.bar2{
-    background-color: white;
+.bar2 {
+  background-color: white;
 }
-.bar1:hover .bar2{
-    background-color: #D3FD50;
-    transition: all;
+.bar1:hover .bar2 {
+  background-color: #d3fd50;
+  transition: all;
 }
 
 ::selection {
-  background: #D3FD50;   /* background color when selected */
-  color: black;        /* text color when selected */
+  background: #d3fd50; /* background color when selected */
+  color: black; /* text color when selected */
 }
 
-
 /* Prevent white flash on initial load */
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -83,12 +86,106 @@ html, body, #root {
   overflow-x: hidden;
   height: 100vh;
 }
-html, body, #root {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+html,
+body,
+#root {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 #root::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
+  display: none; /* Chrome, Safari, Opera */
 }
+
+
+@media (max-width: 389px) {
+    .bigtext{
+        position: relative;
+        font-size: 45px !important;
+        line-height: 5vh;
+        letter-spacing: -1px;
+        word-spacing: 2px;
+        margin-top:45vh !important;
+    }
+    .time {
+        font-size: 10px;
+        margin-bottom: 25px;
+        margin-left: 33px !important;
+    }
+}
+
+/* Responsesive design for smaller screens */
+/* Mobile: Set width and height to screen size for all main containers */
+@media (max-width: 600px) {
+  html,
+  body,
+  #root {
+    width: 100vw;
+    height: 100vh;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .f1 {
+      padding: 5px 7px;
+    }
+    .f2 {
+        padding: 5px 7px;
+    }
+    .time {
+        font-size: 10px;
+        margin-bottom: 25px;
+        margin-left: 45px;
+    }
+
+    .bigtext{
+        position: relative;
+        font-size: 50px;
+        line-height: 5vh;
+        letter-spacing: -1px;
+        word-spacing: 2px;
+        margin-top:57vh;
+    }
+    .para {
+      font-size: 12px;
+      width: 62%;
+    }
+    .nav{
+        width: 200px;
+        height: 47px;
+        margin-right: -2px;
+    }
+    .nav-svg{
+        width: 70px;
+        margin-left: 109px;
+    }
+    .logo{
+        width: 100px;
+        margin-top: -6px;
+        margin-left: -2px;
+    }
+  /* Make header video display fully and small on mobile */
+  .vidparent {
+    width: 100px !important;
+    height: 48px !important;
+    overflow: hidden;
+    align-items: center;
+    margin: 0px 4px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .vid {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: black;
+    display: block;
+  }
+}
+
+
